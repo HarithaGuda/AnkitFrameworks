@@ -28,6 +28,11 @@ public class Module2 extends BaseClass
 	}
 	
 	@Test
+	public void TC206()
+	{
+		System.out.println("Executing TC206");
+   }
+   @Test
 	public void TC205()
 	{
 		System.out.println("Executing TC205");
