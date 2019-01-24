@@ -10,33 +10,30 @@ import applicationPages.Pg102_Home;
 import applicationPages.Pg103_ContactDetails;
 import frameworkLibrary.BaseClass;
 
-public class Module1 extends BaseClass
-{
+public class Module1 extends BaseClass {
 	WebDriver driver;
 	Pg101_Login loginpage;
 	Pg102_Home homepage;
 	Pg103_ContactDetails contactdetailspage;
-	
+
 	@BeforeMethod
-	public void before()
-	{
+	public void before() {
 		System.setProperty("webdriver.chrome.driver", "BrowserServers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://www.testingmasters.com/hrm");
-		
+
 		loginpage = new Pg101_Login(driver);
 		homepage = new Pg102_Home(driver);
-		
+
 		loginpage.setUserName(getdata("Name"));
 		loginpage.setpassword(getdata("Password"));
 		loginpage.ClickonLogin();
 		homepage.clickOnMyInfo();
 		homepage.clickOnContactDetails();
 	}
-	
+
 	@Test
-	public void TC101()
-	{
+	public void TC101() {
 		contactdetailspage = new Pg103_ContactDetails(driver);
 		contactdetailspage.clickOnEdit();
 		contactdetailspage.setAddressStreet1(getdata("Address1"));
@@ -50,10 +47,9 @@ public class Module1 extends BaseClass
 		contactdetailspage.setOtherEmail("pqrs@gmail.com");
 		contactdetailspage.clickOnSave();
 	}
-	
+
 	@AfterMethod
-	public void after()
-	{
+	public void after() {
 		homepage.Logout();
 		quitdriver(driver);
 	}
