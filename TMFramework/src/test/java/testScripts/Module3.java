@@ -37,4 +37,10 @@ public class Module3 extends BaseClass
 	{
 		System.out.println("Executing TC303");
 	}
+	
+	@Test
+	public void TC304()
+	{
+		System.out.println("Executing TC304");
+	}
 }
