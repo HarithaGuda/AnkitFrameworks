@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import applicationPages.Pg101_Login;
 import applicationPages.Pg102_Home;
 import applicationPages.Pg103_ContactDetails;
-import applicationPages.Pg104_EmergencyContactDetails;
 import frameworkLibrary.BaseClass;
 
 public class Module1 extends BaseClass {
@@ -16,7 +15,6 @@ public class Module1 extends BaseClass {
 	Pg101_Login loginpage;
 	Pg102_Home homepage;
 	Pg103_ContactDetails contactdetailspage;
-	Pg104_EmergencyContactDetails emergencyContactDetailsPage;
 	@BeforeMethod
 	public void before() {
 		System.setProperty("webdriver.chrome.driver", "BrowserServers\\chromedriver.exe");
@@ -26,7 +24,7 @@ public class Module1 extends BaseClass {
 		loginpage = new Pg101_Login(driver);
 		homepage = new Pg102_Home(driver);
 
-		loginpage.setUserName(getdata("Name"));
+		loginpage.setUserName(getdata("UserName"));
 		loginpage.setpassword(getdata("Password"));
 		loginpage.ClickonLogin();
 		homepage.clickOnMyInfo();
@@ -47,19 +45,6 @@ public class Module1 extends BaseClass {
 		contactdetailspage.setWorkEmail("abcd@gmail.com");
 		contactdetailspage.setOtherEmail("pqrs@gmail.com");
 		contactdetailspage.clickOnSave();
-	}
-	
-	@Test
-	public void TC102(){
-		emergencyContactDetailsPage = new Pg104_EmergencyContactDetails(driver);
-		emergencyContactDetailsPage.clickOnEmergencyContacts();
-		emergencyContactDetailsPage.clickOnAdd();
-		emergencyContactDetailsPage.setName("ABC");
-		emergencyContactDetailsPage.setRelationship("Mother");
-		emergencyContactDetailsPage.setHomeTelephoneNum("0884-2342342");
-		emergencyContactDetailsPage.setMobileNum("8394343434");
-		emergencyContactDetailsPage.setworkTelephoneNum("03282-1212121");
-		emergencyContactDetailsPage.clickOnSave();
 	}
 
 	@AfterMethod
