@@ -7,8 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 public class DataLibrary
 {
@@ -160,29 +158,6 @@ public class DataLibrary
 			System.out.println("Exception occured while writing data of '" + TestCaseName + "'  TestCase and '"
 					+ ModuleName + "' Module");
 		}
-	}
-	
-	@SuppressWarnings("unchecked")
-	public  void StoreDataToJson(String FieldName,String FieldValue)
-	{
-		try
-		{
-			JSONParser parser = new JSONParser();
-			Object obj = parser.parse(new FileReader("DataFiles\\GlobalData.json"));
-	
-	        JSONObject jsonObject = (JSONObject) obj;
-	        
-			jsonObject.put(FieldName, FieldValue);
-	
-	        @SuppressWarnings("resource")
-			FileWriter file = new FileWriter("DataFiles\\GlobalData.json") ;
-	        file.write(jsonObject.toJSONString());
-	        file.flush();
-        } 
-        catch (Exception e) 
-        {
-            e.printStackTrace();
-        }
 	}
 /*
  *****************************************************************************************************
