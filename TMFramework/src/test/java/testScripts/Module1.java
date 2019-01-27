@@ -37,7 +37,7 @@ public class Module1 extends BaseClass {
 		contactdetailspage.clickOnEdit();
 		contactdetailspage.setAddressStreet1(getdata("Address1"));
 		contactdetailspage.setAddressStreet2("Madhapur");
-		contactdetailspage.setCity("Hyderabad");
+		contactdetailspage.setCity("hyderabad");
 		contactdetailspage.setZipCode("500081");
 		contactdetailspage.setCounty("India");
 		contactdetailspage.setHomeTelephone("9632598745");
