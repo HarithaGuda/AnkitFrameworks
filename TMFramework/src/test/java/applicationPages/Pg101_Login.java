@@ -18,6 +18,7 @@ public class Pg101_Login extends BasePage
 		PageFactory.initElements(driver, this);
 	}
 	//define webelementss
+	//addeing commnet  to application login page
 	@FindBy(how=How.XPATH,using="//input[@name='txtUsername']")
 	WebElement Username;
 	
