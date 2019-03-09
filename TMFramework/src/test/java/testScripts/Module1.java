@@ -45,6 +45,7 @@ public class Module1 extends BaseClass {
 		contactdetailspage.setWorkEmail("abcd@gmail.com");
 		contactdetailspage.setOtherEmail("pqrs@gmail.com");
 		contactdetailspage.clickOnSave();
+	
 	}
 
 	@AfterMethod
