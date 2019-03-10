@@ -47,6 +47,21 @@ public class Module1 extends BaseClass {
 		contactdetailspage.clickOnSave();
 	}
 
+	@Test
+	public void TC102() {
+		contactdetailspage = new Pg103_ContactDetails(driver);
+		contactdetailspage.clickOnEdit();
+		contactdetailspage.setAddressStreet1(getdata("Address1"));
+		contactdetailspage.setAddressStreet2("Madhapur");
+		contactdetailspage.setCity("hyderabad");
+		contactdetailspage.setZipCode("500081");
+		contactdetailspage.setCounty("India");
+		contactdetailspage.setHomeTelephone("9632598745");
+		contactdetailspage.setWorkTelephone("9635125896");
+		contactdetailspage.setWorkEmail("abcd@gmail.com");
+		contactdetailspage.setOtherEmail("pqrs@gmail.com");
+		contactdetailspage.clickOnSave();
+	}
 	@AfterMethod
 	public void after() {
 		homepage.Logout();
